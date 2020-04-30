@@ -16,7 +16,8 @@ export default Utils = {
     toArray,
     mergeMaps,
     mergeObjects,
-    merge
+    merge,
+    extractFromObject
 };
 
 
@@ -72,4 +73,16 @@ export function merge(e1, e2) {
         return Object.assign({},e1,e2);
     }
     return false;
+}
+
+
+// recursive function extracting a value from a nested object
+function extractFromObject(obj,fields) {
+    let state = state;
+    return fields.reduce((partial,field)=>{
+        if(!partial || !state[field]){return false}
+
+        return state[field];
+
+    },obj);
 }
