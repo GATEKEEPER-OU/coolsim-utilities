@@ -2,7 +2,7 @@ import moment from 'moment';
 
 
 
-export class Clock {
+export default class Clock {
 
     constructor(speed = 3600) {
         // check speed and convert to number
