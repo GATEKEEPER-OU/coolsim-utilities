@@ -1,8 +1,10 @@
-import Clock from './clock.js';
+import Clock from "./clock.js";
+import ClockTower from "./clocktower.js";
 
 export default Time = {
     duration,
     Clock,
+    ClockTower,
     scaleToRate:scaleToRate,
     rateToScale:rateToScale
 
