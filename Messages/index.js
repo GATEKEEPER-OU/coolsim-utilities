@@ -1,5 +1,7 @@
-import PostOffice from './postoffice.js';
+import PostOffice from "./postoffice.js";
+import Billboard from "./billboard.js";
 
 export default Messages = {
-    postoffice: PostOffice
-}
+    postoffice: PostOffice,
+    billboard: Billboard
+};
