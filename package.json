@@ -1,0 +1,24 @@
+{
+  "name": "Utils",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrPollo/Community-Planner-Utils.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrPollo/Community-Planner-Utils/issues"
+  },
+  "homepage": "https://github.com/DrPollo/Community-Planner-Utils#readme",
+  "type": "module",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}
