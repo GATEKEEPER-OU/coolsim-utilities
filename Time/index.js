@@ -1,5 +1,6 @@
 import Clock from "./clock.js";
 import ClockTower from "./clocktower.js";
+import {conditionsCost} from "../Costs/index.js";
 
 const Time = {
     duration,

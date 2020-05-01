@@ -1,3 +1,5 @@
+import {checkRate} from "../Rate/index.js";
+
 const Costs ={
     ageing: ageingCost,
     conditions: conditionsCost,

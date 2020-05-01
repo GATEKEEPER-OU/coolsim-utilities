@@ -1,4 +1,5 @@
 import {contingencyCost} from "../Costs/index.js";
+import {toArray} from "../Misc/index.js";
 
 const Rate = {
     pickOne,
