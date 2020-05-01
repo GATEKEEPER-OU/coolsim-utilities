@@ -8,7 +8,7 @@ import Messages from './Messages/index.js';
 
 
 
-export default Utils = {
+const Utils = {
     cost: Costs,
     rate: Rate,
     time: Time,
@@ -19,6 +19,8 @@ export default Utils = {
     merge,
     extractFromObject
 };
+
+export default Utils;
 
 
 // general utils
@@ -78,11 +80,13 @@ export function merge(e1, e2) {
 
 // recursive function extracting a value from a nested object
 function extractFromObject(obj,fields) {
-    let state = state;
     return fields.reduce((partial,field)=>{
-        if(!partial || !state[field]){return false}
+        console.log(partial,field);
 
-        return state[field];
+        if(!partial || obj[field] === false){
+            return false;
+        }
 
+        return partial[field];
     },obj);
 }

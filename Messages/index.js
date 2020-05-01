@@ -1,7 +1,9 @@
 import PostOffice from "./postoffice.js";
 import Billboard from "./billboard.js";
 
-export default Messages = {
+const Messages = {
     postoffice: PostOffice,
     billboard: Billboard
 };
+
+ export default Messages;

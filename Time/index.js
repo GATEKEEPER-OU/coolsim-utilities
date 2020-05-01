@@ -1,7 +1,7 @@
 import Clock from "./clock.js";
 import ClockTower from "./clocktower.js";
 
-export default Time = {
+const Time = {
     duration,
     Clock,
     ClockTower,
@@ -10,7 +10,7 @@ export default Time = {
 
 };
 
-
+export default Time;
 
 // calculate duration
 // input structure of {hours, errors:[array], extra: [array of conditions]

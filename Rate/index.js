@@ -1,4 +1,4 @@
-export default Rate = {
+const Rate = {
     pickOne,
     defaultRate,
     test: testRate,
@@ -7,7 +7,7 @@ export default Rate = {
     severityToRate: severityToRate
 };
 
-
+export default Rate;
 
 
 /////// RATE FUNCTIONS //////////

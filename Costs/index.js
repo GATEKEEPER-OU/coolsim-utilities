@@ -1,11 +1,11 @@
-export default Costs ={
+const Costs ={
     ageing: ageingCost,
     conditions: conditionsCost,
     contingency: contingencyCost,
     weight: calcWeight
 };
 
-
+export default Costs;
 
 
 // cost based on the age beyond a threshold
