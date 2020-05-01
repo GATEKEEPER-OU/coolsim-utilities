@@ -1,3 +1,5 @@
+import {contingencyCost} from "../Costs/index.js";
+
 const Rate = {
     pickOne,
     defaultRate,
