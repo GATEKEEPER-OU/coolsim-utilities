@@ -129,18 +129,20 @@ export default class Store{
             operation = "sync";
         }
         // check if db exists or created it
-        let linkedDB = new PouchDB(path);
-
-        // connect
-        switch (operation){
-            case "to":
-                db.replicate.to(linkedDB,{live:true});
-                break;
-            case "from":
-                db.replicate.from(linkedDB,{live:true});
-                break;
-            default:
-                db.sync(linkedDB,{live:true});
+        if(path) {
+            let linkedDB = new PouchDB(path);
+            // connect
+            switch (operation){
+                case "to":
+                    db.replicate.to(linkedDB,{live:true});
+                    break;
+                case "from":
+                    db.replicate.from(linkedDB,{live:true});
+                    break;
+                default:
+                    db.sync(linkedDB,{live:true});
+            }
         }
+
     }
 }

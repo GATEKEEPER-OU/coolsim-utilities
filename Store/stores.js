@@ -49,6 +49,17 @@ const STORES = new Map(Object.entries(
                 name:"place-visits",
                 fields:["date"]
             },
+        },
+        simulation:{
+            agents:{
+                name:"agent-logs"
+            },
+            area:{
+                name:"area-logs"
+            },
+            place:{
+                name:"place-logs"
+            }
         }
     },
 ));
