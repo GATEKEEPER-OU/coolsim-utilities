@@ -14,11 +14,11 @@ export default class Store{
         if(!type || !STORES.has(type)){
             throw new Error(`Error: unknown store {type}`);
         }
-        if(id){
-            this.id = id;
-        }else{
-            this.id = uniqid();
-        }
+        // if(id){
+        //     this.id = id;
+        // }
+
+
         this.type = type;
         this.store = STORES.get(type);
         this.sections = Object.keys(this.store);
@@ -28,7 +28,12 @@ export default class Store{
         this.names = new Map();
         this._sections = this.sections.reduce((p,section)=>{
             let store = this.store[section];
-            let name = store.name.concat("-",this.id);
+            let name = store.name;
+
+            if(this.id){
+                name = name.concat("-",this.id)
+            }
+
             this.names.set(section,name);
 
 
@@ -74,9 +79,9 @@ export default class Store{
             if(!doc){
                 reject(`ERROR, nothing to save`);
             }
-            let id = "";
 
-            console.log(section,doc, this.store[section]);
+
+            // console.log(section,doc, this.store[section]);
 
             // check mandatory fields
             this.store[section].fields.forEach((field,i)=>{
@@ -87,7 +92,6 @@ export default class Store{
             // id is the key for the store
             let payload = Object.assign({},doc,{agent:this.id,});
             let store = this._sections.get(section);
-            console.log("------",payload);
 
             store.post(payload)
                 .then( response => resolve(response) )
@@ -107,7 +111,7 @@ export default class Store{
     _destroyDBs(){
         this.sections.map((section)=>{
             this._sections.get(section).destroy().then(res=> {
-                console.log(res);
+                // console.log(res);
             }).catch(err=>console.error(err));
 
         });
@@ -122,7 +126,7 @@ export default class Store{
         }
         if(store.from){
             path = store.from;
-            operation = "sync";
+            operation = "from";
         }
         if(store.sync){
             path = store.sync;
@@ -131,16 +135,17 @@ export default class Store{
         // check if db exists or created it
         if(path) {
             let linkedDB = new PouchDB(path);
+            console.log("-----",db.name,operation,path);
             // connect
             switch (operation){
                 case "to":
-                    db.replicate.to(linkedDB,{live:true});
+                    db.replicate.to(linkedDB,{live:true,retry:true});
                     break;
                 case "from":
-                    db.replicate.from(linkedDB,{live:true});
+                    db.replicate.from(linkedDB,{live:true,retry:true});
                     break;
                 default:
-                    db.sync(linkedDB,{live:true});
+                    db.sync(linkedDB,{live:true,retry:true});
             }
         }
 

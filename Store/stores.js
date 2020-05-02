@@ -13,7 +13,7 @@ const STORES = new Map(Object.entries(
     {
         agent:{
             logs:{
-                to:"agents-logs",
+                to:"agent-logs-master",
                 name:"agent-logs",
                 fields:["date"]
             },
@@ -33,32 +33,35 @@ const STORES = new Map(Object.entries(
                 fields:["name"]
             },
             places:{
-                to:"area-places",
+                to:"area-places-master",
                 name:"area-places",
                 fields:["name"]
             },
         },
         place:{
             logs:{
-                to:"places-logs",
+                to:"places-logs-master",
                 name:"place-logs",
                 fields:["name","date"]
             },
             visits:{
-                to:"places-visits",
                 name:"place-visits",
                 fields:["date"]
             },
         },
         simulation:{
             agents:{
-                name:"agent-logs"
+                to:"http://localhost:5985/agents-logs",
+                id:false,
+                name:"agent-logs-master"
             },
             area:{
-                name:"area-logs"
+                id:false,
+                name:"area-logs-master"
             },
             place:{
-                name:"place-logs"
+                id:false,
+                name:"place-logs-master"
             }
         }
     },
