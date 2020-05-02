@@ -1,7 +1,8 @@
-import Rate from './Rate/index.js';
-import Time from './Time/index.js';
-import Costs from './Costs/index.js';
-import Messages from './Messages/index.js';
+import Rate from "./Rate/index.js";
+import Time from "./Time/index.js";
+import Costs from "./Costs/index.js";
+import Messages from "./Messages/index.js";
+import Store from "./Store/index";
 
 import {toArray,mergeMaps,mergeObjects,merge,extractFromObject} from "./Misc/index.js";
 
@@ -9,6 +10,7 @@ import {toArray,mergeMaps,mergeObjects,merge,extractFromObject} from "./Misc/ind
 
 
 const Utils = {
+    store:Store,
     cost: Costs,
     rate: Rate,
     time: Time,
