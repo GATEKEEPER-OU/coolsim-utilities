@@ -30,7 +30,9 @@ export default class Store{
             let store = this.store[section];
             let name = store.name;
 
-            if(this.id){
+            console.log("store type",type," with id ",id);
+
+            if(this.id && store.id !== false ){
                 name = name.concat("-",this.id)
             }
 

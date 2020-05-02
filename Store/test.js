@@ -3,7 +3,7 @@ import Store from "./index.js";
 
 // test
 let a = new Store("agent","123");
-let s = new Store("simulation","master");
+let s = new Store("simulation");
 
 // console.log(s);
 
