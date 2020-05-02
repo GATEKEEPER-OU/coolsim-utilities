@@ -18,7 +18,7 @@ const STORES = new Map(Object.entries(
                 fields:["date"]
             },
             state:{
-                to:"agents-state",
+                to:"agents-state-master",
                 name:"agent-state",
                 fields:[]
             },
