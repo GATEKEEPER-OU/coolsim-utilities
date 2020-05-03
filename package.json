@@ -21,6 +21,7 @@
   "dependencies": {
     "moment": "^2.24.0",
     "pouchdb": "^7.2.1",
+    "pouchdb-adapter-memory": "^7.2.1",
     "pouchdb-find": "^7.2.1",
     "uniqid": "^5.2.0"
   }
