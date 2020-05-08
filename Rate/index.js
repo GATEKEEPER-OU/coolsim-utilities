@@ -17,21 +17,27 @@ export default Rate;
 
 export function pickOne(entries,field='rate') {
     let list = toArray(entries);
-    let num = Math.random();
     let defaultIndex = 0;
     let resultIndex = list.reduce((partial,entry,index)=>{
-        // console.log('test',num,entry[field],(partial < 0 && num < entry[field]));
+        if(!entry){return partial;}
+
+        if(entry.type && entry.type === "default"){
+            defaultIndex = index;
+        }
         // if val is null or 0 is ignored, e.g. rate = 0
-        if(!entry[field]) return partial;
-        if(entry.type){defaultIndex = index;}
-        if(partial < 0 && num < entry[field]) return index;
+        if(!entry[field]){
+            return partial;
+        }
+        if(testRate(entry[field])) {
+            return index;
+        }
         return partial
     },-1);
+
     if(resultIndex < 0){
         resultIndex = defaultIndex;
     }
-    // console.log('result index',resultIndex);
-    // console.log('result',list[resultIndex]);
+    // console.log('result index',resultIndex, list[resultIndex]);
     return list[resultIndex];
 }
 
@@ -58,7 +64,9 @@ export function defaultRate(list = [],field = 'rate'){
 
 // just test a rate
 export function testRate(rate){
-    return (Math.random() <= rate);
+    let n = Math.random();
+    // console.log("???",n, rate, (n <= rate) );
+    return (n <= rate);
 }
 
 // rate (eg. 0.1, {age,conditions} features of user state and arrays
