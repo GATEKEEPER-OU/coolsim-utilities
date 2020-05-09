@@ -14,6 +14,17 @@ export function toArray(list) {
     return Array.from(list);
 }
 
+export function mapToObject(map) {
+    if( map instanceof Map){
+        let keys = Array.from(map.keys());
+        return keys.reduce((r,v) => {
+            r[v]=map.get(v);
+            return r;
+        }, {});
+    }
+    return false;
+}
+
 
 export function mergeMaps(map1,map2) {
     let result = new Map(map1);

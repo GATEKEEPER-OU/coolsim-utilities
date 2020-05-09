@@ -98,10 +98,8 @@ export function severityToRate(severity){
     }
 }
 export function rateToSeverity(rate){
-    if(rate == 0) return 'none';
-    if(rate <= 0.035) return 'light';
-    if(rate <= 0.066) return 'bi-week';
-    if(rate <= 0.15) return 'week';
-    if(rate <= 0.7) return 'work-day';
-    return 'day';
+    if(rate > 0.66666666666) return 'critical';
+    if(rate > 0.33333333333) return 'mild';
+    if(rate > 0) return 'light';
+    return 'none';
 }

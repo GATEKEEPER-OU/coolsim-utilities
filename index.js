@@ -3,7 +3,7 @@ import Time from "./Time/index.js";
 import Costs from "./Costs/index.js";
 import Messages from "./Messages/index.js";
 
-import {toArray,mergeMaps,mergeObjects,merge,extractFromObject} from "./Misc/index.js";
+import {toArray,mergeMaps,mergeObjects,merge,extractFromObject,mapToObject} from "./Misc/index.js";
 
 
 
@@ -17,7 +17,8 @@ const Utils = {
     mergeMaps,
     mergeObjects,
     merge,
-    extractFromObject
+    extractFromObject,
+    mapToObject
 };
 
 export default Utils;
