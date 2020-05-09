@@ -58,7 +58,7 @@ export function defaultRate(list = [],field = 'rate'){
         }
         return sum;
     },0);
-    list.filter(role=>!!role.type)[0][field] = Math.max(0, (1 - total) );
+    list.filter(role=>role.type === "default")[0][field] = Math.max(0, (1 - total) );
     return list;
 }
 
