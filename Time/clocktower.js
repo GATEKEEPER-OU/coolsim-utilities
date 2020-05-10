@@ -43,6 +43,11 @@ export default class ClockTower{
         this.alarms.set(days,alarms);
         return true;
     }
+    age(year) {
+        if(!parseInt(year) || isNaN(year)){return false;}
+        // console.log('clock',year,this.now.get('year'));
+        return parseInt( this.now.get('year') ) - parseInt(year);
+    }
 }
 
 
