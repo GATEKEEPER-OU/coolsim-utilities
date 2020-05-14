@@ -11,6 +11,6 @@ let a = Rate.defaultRate(list);
 
 let r = Rate.pickOne(a);
 
-console.log(a);
+// console.log(a);
 // console.log(list);
-console.log(r);
+// console.log(r);

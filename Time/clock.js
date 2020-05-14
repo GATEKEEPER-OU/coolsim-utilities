@@ -54,6 +54,13 @@ export default class Clock {
         // console.log('input age',age,' output year of birth ',yearOfBirth);
         return yearOfBirth;
     }
+    get tillTomorrow(){
+        let now = this.now;
+        let tomorrow = moment(now).set({hour:0,minute:0,second:0,millisecond:0}).add(1,"day");
+        let delta = tomorrow.unix() - now.unix();
+        // seconds till tomorrow
+        return this.milliseconds(delta,"seconds");
+    }
     // time interval converted to the time of the simulation,
     // e.g. 5 hours = (5*3600s / ratio) * 1000 => sleep interval in milliseconds
     // errors is used to introduce an error

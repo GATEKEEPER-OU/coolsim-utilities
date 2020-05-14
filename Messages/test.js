@@ -23,13 +23,13 @@ board.publish = {
 };
 
 
-console.log("read now the board, sections:\n",board.sections);
+// console.log("read now the board, sections:\n",board.sections);
 let section = board.sections[0];
-console.log(`read now section ${section}\n 
+// console.log(`read now section ${section}\n
 ${board.read('random')}`);
 
 let m = board.read('random')[0];
 
 board.taken = {message: m, topic: 'random'};
 
-console.log("read again",board.read('random'));
+// console.log("read again",board.read('random'));

@@ -70,7 +70,7 @@ export function merge(e1, e2) {
 // recursive function extracting a value from a nested object
 export function extractFromObject(obj,fields) {
     return fields.reduce((partial,field)=>{
-        console.log(partial,field);
+        // console.log(partial,field);
 
         if(!partial || obj[field] === false){
             return false;
