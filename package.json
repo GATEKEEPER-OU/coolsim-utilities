@@ -20,6 +20,7 @@
   "type": "module",
   "dependencies": {
     "moment": "^2.24.0",
+    "node-ziggurat": "0.0.2",
     "pouchdb": "^7.2.1",
     "pouchdb-adapter-memory": "^7.2.1",
     "pouchdb-find": "^7.2.1",

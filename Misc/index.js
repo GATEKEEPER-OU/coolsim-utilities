@@ -1,7 +1,19 @@
-
+import Ziggurat from "node-ziggurat";
 
 
 // general utils
+
+export class Distribution{
+    constructor(){}
+    static normal() {
+        let z = new Ziggurat();
+        let num = z.nextGaussian();
+        return Math.max(0,(num+5)/10);
+    }
+    static uniform() {
+        return Math.random();
+    }
+}
 
 export function toArray(list) {
     if(Array.isArray(list)){return list;}

@@ -14,3 +14,12 @@ let o = Utils.mapToObject(m);
 
 
 // console.log(o);
+
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
+console.log(Utils.Distribution.normal());
