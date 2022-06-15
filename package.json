@@ -1,5 +1,5 @@
 {
-  "name": "Utils",
+  "name": "coolsim-utilities",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,19 +8,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DrPollo/Community-Planner-Utils.git"
+    "url": "git+https://github.com/GATEKEEPER-OU/coolsim-utilities.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DrPollo/Community-Planner-Utils/issues"
+    "url": "https://github.com/GATEKEEPER-OU/coolsim-utilities/issues"
   },
-  "homepage": "https://github.com/DrPollo/Community-Planner-Utils#readme",
+  "homepage": "https://github.com/GATEKEEPER-OU/coolsim-utilities#readme",
   "type": "module",
   "dependencies": {
     "moment": "^2.24.0",
-    "node-ziggurat": "0.0.2",
+    "node-ziggurat": "^0.0.2",
     "pouchdb": "^7.2.1",
     "pouchdb-adapter-memory": "^7.2.1",
     "pouchdb-find": "^7.2.1",

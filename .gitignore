@@ -1,5 +1,3 @@
 _DS_Store
-DS_Store
 .idea
-log.txt
-package-lock.json
+node_modules
