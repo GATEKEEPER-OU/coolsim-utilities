@@ -15,16 +15,20 @@ export default Time;
 
 // calculate duration
 // input structure of {hours, errors:[array], extra: [array of conditions]
-export function duration({hours, errors},conditions = 0){
+export function duration({hours, errors},conditions = []){
+    if(!hours || !errors){
+        throw `{hours, errors} are mandatory fields, got hours: ${hours} and errors: ${errors}`
+    }
+    // console.log("Time.duration",hours,errors,conditions.length)
     // extra can be a number or an array of conditions
-    let extraCost = conditionsCost(conditions);
-    let duration = parseFloat(hours);
+    const extraCost = conditionsCost(conditions);
+    const dur = parseFloat(hours);
     let error = errors[Math.floor(Math.random() * errors.length)];
     // console.log('........',error);
     // increase the error considering age and conditions (always slower, thus error is abs)
     error += (Math.abs(error) + extraCost );
-    // console.log('-----', duration,error,duration+error);
-    return duration + error ;
+    // console.log('-----', dur,error,dur+error);
+    return dur + error ;
 }
 
 
